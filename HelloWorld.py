@@ -1,0 +1,5 @@
+Name=input('enter your name\n')
+#Old=input('How old are you ?\n')
+#print('Your name are '+Name+' and you are '+Old+' year old')
+Hobby=input('What is your Hobby ?\n')
+print('your hobby is '+Hobby)
