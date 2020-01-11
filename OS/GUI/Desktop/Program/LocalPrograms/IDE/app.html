@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>IDE</title>
+        <link rel="icon" href="favicon.ico" type="text/x-icon">
+    </head>
+   
+    <body >
+        <style>
+            body{
+                display: flex;
+                flex-flow: row;
+                background-image:url('text_background.png');
+                background-size: cover;
+                background-repeat:space;
+                background-color: rgb(27, 43, 56);
+            }
+            .ide-input-text{
+                margin-right: 5px;
+                opacity: 0.7;
+
+                background-color: rgb(16, 19, 22);
+                border: solid 3px rgb(162, 187, 209);
+                border-radius: 10px;
+                color: rgb(194, 216, 253);
+                font-family: cursive;
+            }
+    
+           
+            .ide-tool-button{
+
+                height: 30px;
+                width: 30px;
+
+                background-size: cover;
+
+                
+
+                background-color: rgb(13, 23, 32);
+
+                border: solid 3px rgb(130, 153, 173);
+                border-radius: 10px;
+
+                opacity: 0.8;
+
+                font-family: cursive;
+                color: rgb(255, 255, 255);
+                font-size: 8px;
+
+                margin-right: 5px;
+
+
+            }
+
+            .compiledText{
+                font-size: 15px;
+                font-family: cursive;
+                color: rgb(178, 204, 252);
+                margin-bottom: 2px;
+            }
+            #CompiledText{
+                width: 500px;
+                height: 250px;
+                overflow-x: auto;
+                opacity: 0.7;
+                background-color: rgb(41, 53, 63);
+
+                background-size: cover;
+                border: solid 2px rgb(158, 185, 231);
+                border-radius: 10px;
+                padding-left: 5px;
+                padding-right: 5px;
+                margin-right: 10px;
+                overflow: auto;
+                margin-bottom: 5px;
+            }
+
+            #ide-tool-bar{
+
+            }
+
+
+            .path{
+                font-size: 12px;
+                height: 15px;
+                color: rgb(160, 180, 197);
+                font-family: cursive;
+                opacity: 0.5;
+                margin-bottom: 2px;
+                border: solid 1px rgb(125, 143, 170);
+                border-radius: 4px;
+                background-color: rgb(66, 82, 97);
+                width: 70%;
+            }
+
+            #right{
+                display: flex;
+                flex-flow: column;
+                width: 400px;
+            }
+
+            .flex-row{
+                display: flex;
+                flex-flow: row;
+            }
+
+        </style>
+
+        <script src="../../../../../Compiler/ABW/abw.js"></script>
+
+        <script>
+
+            var ShowCompiledText=function(compiledText)
+            {
+                var CompiledTextDiv=document.getElementById('CompiledText');
+                CompiledTextDiv.innerHTML='';
+                var innerHTML='';
+                for(var i=0;i<compiledText.length;i++)
+                {
+                    innerHTML='<text class="compiledText" id="line'+String(i)+'"></text><br>';
+                    CompiledTextDiv.innerHTML+=innerHTML;
+                    document.getElementById('line'+String(i)).textContent=compiledText[i];
+                }
+                
+            }
+
+
+            var CompileToJS=function()
+            {
+                console.log('Compile to JS');
+                var textInput=document.getElementById('input').value;
+                var compiledText=ToJS(textInput);
+                ShowCompiledText(compiledText);
+                console.log('Done');
+                return compiledText;
+            }
+
+
+
+
+            var SaveJS=function()
+            {
+                var dataForSending;
+                var data;
+                //get data for sending
+                {
+                    var allLines = CompileToJS();
+                    data='';
+                    for(var i=0;i<allLines.length;i++)
+                    {
+                        data+=allLines[i]+'\n';
+                    }
+                }
+                //add data to htmltext
+                {
+                    
+                    
+                    var css=[
+                        ".line{color: rgb(118, 146, 168);}",
+                        "#allLines{padding: 2px;border: solid 2px rgb(190, 205, 223);border-radius: 10px;text-align: center;margin-bottom: 10px;}"
+                    ];
+                    var htmlText="<html>\n<body>\n";
+                
+                
+                    //add style
+                    {
+                        htmlText+="<style>\n";
+                        for (var i=0;i<css.length;i++)
+                        {
+                            htmlText+=css[i];
+                        }
+                        htmlText+="</style>\n";
+                    }
+
+                    //add libs
+                    {
+                        htmlText+="<div id='allLines'></div>\n<script>\n";
+
+                        for(var i=0;i<allLibs.length;i++)
+                            htmlText+=allLibs[i];
+                        
+                        htmlText+="function program(){"+data+"}program();<"+"/script>\n</body>\n</html>\n";
+                    }
+                    
+
+                    //get data for sending
+                    dataForSending=encodeURIComponent(htmlText);
+                }
+
+                //getpath
+                {
+                    var path;
+                    var pt=document.getElementById('jspath');
+                    if(pt.value!='')
+                        path=pt.value;
+                    else
+                        path='GUI/Desktop/Program/LocalPrograms/IDE/Run/js.html';
+                }
+
+                //send data to server
+                {
+                    var xhr = new XMLHttpRequest();
+                    var url = window.location.href+"?behavior=saveFile&pass=14112005&filedata=" + dataForSending + "&path=" + path;
+                    console.log(url);
+                    xhr.open("GET", url, true);
+                    xhr.onreadystatechange = function () {
+                        if (xhr.readyState === 4 && xhr.status === 200) {
+                        }
+                    };
+                    xhr.send();
+                }
+                
+            }
+            var SaveBS=function()
+            {
+                var allLines = ToLineArray(document.getElementById('input').value);
+                var data='';
+                for(var i=0;i<allLines.length;i++)
+                {
+                    data+="<p>"+allLines[i]+'</p>'+'\n';
+                }
+                
+                var dataForSending=encodeURIComponent(data);
+
+                //getpath
+                var path;
+                var pt=document.getElementById('bspath');
+                if(pt.value!='')
+                    path=pt.value;
+                else
+                    path='GUI/Desktop/Program/LocalPrograms/IDE/Run/bs.html';
+
+                //send data to server
+                var xhr = new XMLHttpRequest();
+                var url = window.location.href+"?behavior=saveFile&pass=14112005&filedata=" + dataForSending + "&path=" + path;
+                console.log(url);
+                xhr.open("GET", url, true);
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState === 4 && xhr.status === 200) {
+                    }
+                };
+                xhr.send();
+            }
+
+
+            var Run=function()
+            {
+                
+                SaveJS();
+                var p1='';
+                for(var i=0;i<window.location.href.length;i++)
+                {
+                    p1=p1+window.location.href[i];
+                    if(window.location.href[i]=='/')break;
+                }
+                var path;
+                var pt=document.getElementById('jspath');
+                if(pt.value!='')
+                    path=pt.value;
+                else
+                    path='GUI/Desktop/Program/LocalPrograms/IDE/Run/js.html';
+                var fullURL2=p1+path;
+                console.log(fullURL2);
+                window.open(fullURL2);
+                
+            }
+        </script>
+
+        <textarea name="Input" spellcheck="false" id="input" cols="50" rows="15" class="ide-input-text"></textarea>
+
+        <div id="right">
+            
+            <div id="CompiledText"></div>
+            <div class="flex-row">
+                <img src="button2.png" alt="" style="height: 17px; border: solid 1px rgb(106, 121, 124);border-radius: 5px;margin-right: 2px;opacity: 0.3;">
+                <input type="text" class="path" spellcheck="false" id="jspath">
+            </div>
+            <div class="flex-row">
+                <img src="button3.png" alt="" style="height: 17px; border: solid 1px rgb(106, 121, 124);border-radius: 5px;margin-right: 2px;opacity: 0.3;">
+                <input type="text" class="path" spellcheck="false" id="bspath"> 
+            </div>
+            
+            <div id="ide-tool-bar">
+                <button class="ide-tool-button" style="background-image: url('button2.png');" onclick="if(document.getElementById('jspath').value!='GUI/Desktop/Program/LocalPrograms/IDE/app.html')SaveJS();"></button>
+                <button class="ide-tool-button" style="background-image: url('button3.png');" onclick="if(document.getElementById('bspath').value!='GUI/Desktop/Program/LocalPrograms/IDE/app.html')SaveBS();"></button>
+                <button class="ide-tool-button" onclick="CompileToJS();" style="background-image: url('button.png');"></button>
+                <button class="ide-tool-button" onclick="if(document.getElementById('jspath').value!='GUI/Desktop/Program/LocalPrograms/IDE/app.html')Run();" style="background-image: url('button4.png');"></button>
+            </div>
+            <a href="Documents/documents.html" style="color: rgb(193, 207, 233); font-family: cursive;opacity: 0.5;">Documents</a>
+        </div>
+       
+    </body>
+</html>

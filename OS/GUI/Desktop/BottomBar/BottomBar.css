@@ -1,0 +1,28 @@
+.logo{
+
+}
+
+.bottom-bar{
+    left: 0.5%;
+    width: 98%;
+    height: 30px;
+    position: fixed;
+    bottom: 0;
+    background-color: rgb(132, 160, 202);
+    opacity: 0.2;
+    display: flex;
+    overflow-x: auto;
+    border: solid 5px white;
+    border-radius: 10px;
+}
+
+.setting-button{
+    padding: 0px;
+    border: solid 3px rgb(50, 135, 185);
+    border-radius: 2px;
+    color: rgb(44, 105, 184);
+    font-size: 20px;
+    height: 30px;
+    width: 30px;
+    margin-right: 5px;
+}

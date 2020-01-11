@@ -1,0 +1,24 @@
+<html>
+<body>
+<style>
+.line{color: rgb(118, 146, 168);}#allLines{padding: 2px;border: solid 2px rgb(190, 205, 223);border-radius: 10px;text-align: center;margin-bottom: 10px;}</style>
+<div id='allLines'></div>
+<script>
+function write(str){document.getElementById('allLines').innerHTML+='<text class="line">'+str.toString()+'</text>';}function writeln(str){document.getElementById('allLines').innerHTML+='<text class="line">'+str.toString()+'</text><br>';}function clear(){document.getElementById('allLines').innerHTML='';}
+var appendFileText=function(str,path,strb)
+{
+    var xhr = new XMLHttpRequest();
+    str=encodeURIComponent(str);
+    var url = window.location.href+"?behavior=cmdAppendFile&pass=14112005&filedata=" + str + "&path=" + path+"&str="+strb;
+    console.log(url);
+    xhr.open("GET", url, true);
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+        }
+    };
+    xhr.send();
+}
+function newTerminalCommand(commandMethod,Cname){var str=commandMethod.toString();var text=str;appendFileText(text,'GUI/Desktop/Program/LocalPrograms/Terminal/commands/ExtendedCommands.js','false');appendFileText(Cname,'GUI/Desktop/Program/LocalPrograms/Terminal/commands/ExtendedCommandNames.js','true');}function desktop(){window.open(window.location.origin+'/GUI/Desktop/Desktop.html');}function program(){write('Hello World');
+}program();</script>
+</body>
+</html>

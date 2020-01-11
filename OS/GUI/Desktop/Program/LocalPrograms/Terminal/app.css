@@ -1,0 +1,77 @@
+body{
+    background-color: rgb(48, 51, 58);
+    background-image: url('background.png');
+    background-size: 100px;
+    padding-left:20px;
+    padding-right: 20px;
+    padding-top: 20px;
+}
+
+#input{
+    position: static;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    background-color: rgb(48, 51, 58);
+    border-radius: 5px;
+    border: solid 2px rgb(134, 134, 134);
+    background-image: url('background2.png');
+    background-size: 50px;
+    color: #548E5F;
+    height: 34px;
+    width: 800px;
+    padding-left: 5px;
+    padding-top: 0px;
+    font-family: cursive;
+}
+
+
+.line{
+    font-family: cursive;
+    padding-left: 5px;
+    font-size: 15px;
+    color: rgb(72, 121, 194);
+}
+
+.error-line{
+    font-family: cursive;
+    padding-left: 5px;
+    font-size: 15px;
+    color: rgb(119, 56, 56);
+}
+
+.tittle-line{
+    font-family: cursive;
+    padding-left: 5px;
+    font-size: 15px;
+    color: rgb(111, 155, 82);
+}
+.end-line{
+    font-family: cursive;
+    border: solid 0.5px rgb(64, 67, 80);
+    padding-left: 5px;
+    font-size: 15px;
+    color: rgb(89, 105, 78);
+}
+
+.flex-row{
+    display: flex;
+    flex-flow: row;
+}
+
+
+.directory-name{
+    overflow-x: auto;
+    opacity: 0.5;
+    margin-top: 10px;
+    color: rgb(189, 189, 189);
+    margin-right: 4px;
+    border: solid 2px rgb(147, 149, 155);
+    border-radius: 5px;
+    padding-top: 3px;
+    padding-right: 2px;
+    padding-left: 2px;
+    font-size: 15px;
+    height: 32px;
+    width: 150px;
+    background-image: url('background.png');
+}

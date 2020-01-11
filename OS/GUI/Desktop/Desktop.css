@@ -1,0 +1,32 @@
+.desktop{
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-image: url("background.jpg");
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.line{
+    height: 10px;
+}
+
+.flex-row{
+    display: flex;
+    flex-flow: row;
+}
+
+.line2{
+    height: 5%;
+}
+
+.vertical-line
+{
+    
+    height: 100%;
+    width: 1px;
+    background-color: white;
+}
+

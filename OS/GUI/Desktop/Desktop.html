@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Desktop</title>
+        <link rel="stylesheet" href="Desktop.css">
+        <link rel="stylesheet" href="TaskBar/Taskbar.css">
+        <link rel="stylesheet" href="Program/Program.css">
+        <link rel="stylesheet" href="BottomBar/BottomBar.css">
+        <link data-src="Programs/IDE/app.pr">
+        <link rel="stylesheet" href="ToolBar/ToolBar.css">
+        <link rel="icon" href="favicon.ico" type="text/x-icon">
+    </head>
+    <body>
+        <div class="desktop">
+
+            <script src="../../jquery_321/jquery-3.2.1.js" type="text/javascript"></script>
+
+            <div class="taskbar">
+                <div class="logo"></div>
+            </div>
+
+            <div class="line"></div>
+
+            <div class="flex-row line2">
+                <div class="program-list">
+                    <button class="program" style="background-image: url('Program\\LocalPrograms\\IDE\\IDElogo.jpg');" id="button1" onclick="OnProgramButtonClicked('1');" ></button>
+                    <div class="vertical-line"></div>
+                    <button class="program" style="background-image: url('Program\\LocalPrograms\\Setting\\Settinglogo.png');" id="button2" onclick="OnProgramButtonClicked('2');"></button>
+                    <div class="vertical-line"></div>
+                    <button class="program" style="background-image: url('Program\\LocalPrograms\\SearchTool\\SearchToollogo.jpg');" id="button3" onclick="OnProgramButtonClicked('3');"></button>
+                    <div class="vertical-line"></div>
+                    <button class="program" style="background-image: url('Program\\LocalPrograms\\Image\\Imagelogo.png');" id="button4" onclick="OnProgramButtonClicked('4');"></button>
+                    <div class="vertical-line"></div>
+                    <button class="program" style="background-image: url('Program\\LocalPrograms\\Paint\\Paintlogo.jpg');" id="button5" onclick="OnProgramButtonClicked('5');"></button>
+                    <div class="vertical-line"></div>
+                    <button class="program" style="background-image: url('Program\\LocalPrograms\\Terminal\\Terminallogo.png');" id="button6" onclick="OnProgramButtonClicked('6');"></button>
+                    <div class="vertical-line"></div>
+                    <script src="Program\Program.js"></script>
+                </div>
+            </div>
+
+            <div class="line"></div>
+
+            <div class="line"></div>
+
+            <div class="line"></div>
+
+            <div class="bottom-bar">
+                <button class="setting-button">+</button>
+                <button class="setting-button">-</button>
+            </div>
+
+        </div>
+    </body>
+</html>

@@ -1,0 +1,18 @@
+.taskbar{
+    left: 50%;
+    width: 98%;
+    height: 30px;
+    background-color: rgb(132, 160, 202);
+    opacity: 0.9;
+    display: flex;
+    overflow-x: auto;
+    border: solid 5px white;
+    border-radius: 10px;
+}
+
+.logo{
+    background-image: url("logo.png");
+    height: 30px;
+    width: 30px;
+    background-size: cover;
+}

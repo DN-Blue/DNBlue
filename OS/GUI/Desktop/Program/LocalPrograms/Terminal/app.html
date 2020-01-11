@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Terminal</title>
+        <link rel="stylesheet" href="app.css">
+        <link rel="icon" href="favicon.ico" type="text/x-icon">
+    </head>
+    <body>
+
+        <p style="margin-left: 10px; color: rgb(88, 97, 126);opacity: 0.3;font-size: 120%;">command for help:'/help/'</p>
+
+        <div class="flex-row">
+            <div class="directory-name">
+                <text id="directory-name-text">System/</text>
+            </div>
+            <input type="text" spellcheck="false" id="input" onkeydown="KeyDown(event);">
+            
+        </div>
+        <div id="allLines">
+            
+        </div>
+
+        <script src="../../Program.js" type="text/javascript"></script>
+        <script src="command.js" type="text/javascript"></script>
+        <script src="app.js" type="text/javascript"></script>
+        <script src="commands/CommandForCompile.js" type="text/javascript"></script>
+        <script src="commands/CommandForSearch.js" type="text/javascript"></script>
+        <script src="../../../../../Compiler/ABW/abw.js" type="text/javascript"></script>
+        <script src="commands/CommandForHelp.js" type="text/javascript"></script>
+        <script src="commands/CommandForProgram.js" type="text/javascript"></script>
+        <script src="commands/CommandForIO.js" type="text/javascript"></script>
+        <script src="commands/ExtendedCommands.js" type="text/javascript"></script>
+        <script src="commands/ExtendedCommandNames.js" type="text/javascript"></script>
+    </body>
+</html>

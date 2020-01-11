@@ -1,0 +1,38 @@
+.program-list{
+    width: 97.4%;
+    height: 30px;
+    opacity: 0.6;
+    background-color: cornflowerblue;
+    border: solid 5px white;
+    border-radius: 10px;
+    display: flex;
+    padding-left: 0.5%;
+    padding-bottom: 0.5%;
+    padding-top: 0.5%;
+    overflow-x: auto;
+}
+
+
+.program {
+    background-color: rgb(89, 119, 163);
+    background-size: 100%;
+    width: 30px;
+    height: 30px;
+    border: solid 3px white;
+    border-radius: 10px;
+    margin-right: 0.5%;
+    margin-left: 0.5%;
+}
+
+.opened-program{
+    width: 85%;
+    height: 100%;
+    opacity: 0.7;
+    background-color: cornflowerblue;
+    border: solid 5px white;
+    border-radius: 10px;
+
+    padding: 0%;
+
+}
+

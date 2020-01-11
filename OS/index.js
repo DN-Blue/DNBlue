@@ -1,0 +1,1 @@
+window.location.href='GUI\\Desktop\\Desktop.html';

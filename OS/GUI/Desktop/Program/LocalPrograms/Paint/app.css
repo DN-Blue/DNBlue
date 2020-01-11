@@ -1,0 +1,65 @@
+#board{
+    cursor: url('cursor1.png'), auto;	
+    background-color: white;
+    border: solid 5px rgb(61, 91, 116);
+    border-radius: 20px;
+    opacity: 0.8;
+
+}
+
+#tool-bar{
+    height: 70%;
+    width: 50px;
+    position: fixed;
+    right: 10%;
+    top: 0;
+    opacity: 0.8;
+    background-color: white;
+    border: solid 5px rgb(61, 91, 116);
+    border-radius: 20px;
+    padding-top: 3px;
+    padding-left: 3px;
+}
+
+.tool{
+    width: 45px;
+    height: 45px;
+    border: solid 5px rgb(255, 255, 255);
+    border-radius: 15px;
+    background-size: 100%;
+}
+
+.color-bar{
+    width: 45px;
+    height: 120px;
+    background-color: rgb(70, 90, 107);
+    border: solid 5px rgb(255, 255, 255);
+    border-radius: 15px;
+    padding: 2px;
+    opacity: 0.8;
+}
+
+.color-input{
+    color: white;
+    width: 33px;
+    margin-bottom: 10px;
+    margin-top: 5px;
+    margin-left: 1px;
+    border: solid 5px rgb(255, 255, 255);
+    border-radius: 8px;
+}
+
+
+
+*{
+    margin-top: 0;
+}
+
+body{
+    background-color: rgb(116, 116, 116);
+    background-image: url('../IDE/background.jpg');
+    background-size: 100%;
+    background-repeat: repeat-x;
+    background-color: rgb(27, 43, 56);
+}
+

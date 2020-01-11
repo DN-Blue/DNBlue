@@ -1,0 +1,41 @@
+body{
+    background-image: url('background.jpg');
+    background-size: 100%;
+    background-repeat: repeat-x;
+    background-color: rgb(36, 30, 56);
+    display: flex;
+    justify-content: center;
+}
+
+.search-box{
+    position: fixed;
+    bottom: 50%;
+    display: flex;
+    flex-flow: row;
+}
+
+.logo{
+
+    opacity: 0.8;
+    background-image: url('SearchToolLogo.jpg');
+    background-size: 100%;
+    width: 30px;
+    height: 30px;
+    border: solid 4px rgb(55, 106, 122);
+    border-radius: 40px;
+    margin-right: 2px;
+}
+
+
+
+.search-input{
+    height: 20px;
+    opacity: 0.7;
+    font-family: cursive;
+    font-weight: 200;
+    font-style: oblique;
+    color: rgb(69, 139, 160);
+    border: solid 4px rgb(55, 106, 122);
+    border-radius: 40px;
+    padding: 4px;
+}
